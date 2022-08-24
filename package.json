@@ -10,8 +10,8 @@
   "scripts": {
     "test": "jest tests/*.test.js",
     "build:clean": "rimraf dist",
-    "build:chrome": "npm run build:clean && webpack --progress --config webpack/webpack.config.chrome.js",
-    "dev": "npm run build:clean && webpack --watch --progress --config webpack/webpack.config.chrome.js"
+    "build:chrome": "npm run build:clean && webpack --progress --config webpack/webpack.config.chrome.prod.js",
+    "dev": "npm run build:clean && webpack --watch --progress --config webpack/webpack.config.chrome.dev.js"
   },
   "repository": {
     "type": "git",
