@@ -1,6 +1,6 @@
 {
   "name": "contentful-sidekick",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Chrome Extension that enables inline editing for websites created in Contentful. Modified by Clue.",
   "main": "index.js",
   "browserslist": [

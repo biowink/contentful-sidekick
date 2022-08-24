@@ -3,7 +3,7 @@
   "name": "Clue Contentful Sidekick",
   "short_name": "Clue CS",
   "description": "Chrome Extension that enables inline editing for websites created in Contentful. Modified by Clue.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "permissions": [
     "activeTab",
     "storage",
