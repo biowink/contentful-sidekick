@@ -65,3 +65,4 @@ typings/
 
 # dist folder shoudl not be checked in
 dist
+.idea
