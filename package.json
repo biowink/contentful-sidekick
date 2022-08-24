@@ -1,10 +1,11 @@
 {
   "name": "contentful-sidekick",
   "version": "1.0.0",
-  "description": "Chrome Extension that enables inline editing for websites created in Contentful",
+  "description": "Chrome Extension that enables inline editing for websites created in Contentful. Modified by Clue.",
   "main": "index.js",
   "browserslist": [
-    "last 1 Chrome versions"
+    "last 1 Chrome versions",
+    "last 1 Firefox versions"
   ],
   "scripts": {
     "test": "jest tests/*.test.js",
@@ -14,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bradtaylorsf/contentful-sidekick.git"
+    "url": "git+https://github.com/biowink/contentful-sidekick.git"
   },
   "keywords": [
     "contentful",
@@ -22,11 +23,14 @@
     "cms"
   ],
   "author": "Brad Taylor <bradtaylorsf@gmail.com>",
+  "maintainers": [
+    "Maciej Sawicki <maciej_ext@helloclue.com>"
+  ],
   "license": "GPL-1.0-or-later",
   "bugs": {
-    "url": "https://github.com/bradtaylorsf/contentful-sidekick/issues"
+    "url": "https://github.com/biowink/contentful-sidekick/issues"
   },
-  "homepage": "https://github.com/bradtaylorsf/contentful-sidekick#readme",
+  "homepage": "https://github.com/biowink/contentful-sidekick#readme",
   "dependencies": {
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
