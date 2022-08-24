@@ -4,7 +4,14 @@
   "short_name": "Clue CS",
   "description": "Chrome Extension that enables inline editing for websites created in Contentful. Modified by Clue.",
   "version": "1.0.0",
-  "permissions": ["activeTab", "storage", "tabs", "http://*/*", "https://*/*", "*://*/*"],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "*://*/*"
+  ],
   "icons": {
     "16": "img/icon16.png",
     "32": "img/icon32.png",
@@ -18,16 +25,28 @@
     "default_title": "Clue Contentful Sidekick"
   },
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": [
+      "js/background.js"
+    ]
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
       "run_at": "document_idle",
-      "js": ["js/vendor.js", "js/content.js"],
-      "css": ["css/content.css"]
+      "js": [
+        "js/vendor.js",
+        "js/content.js"
+      ],
+      "css": [
+        "css/content.css"
+      ]
     }
   ],
-  "web_accessible_resources": ["js/content.js"],
+  "web_accessible_resources": [
+    "js/content.js"
+  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
