@@ -26,9 +26,15 @@ data-csk-entry-id={entry.sys.id}
 data-csk-entry-field="yourFieldApiName"
 data-csk-entry-type={entry.sys.contentType.sys.id}
 data-csk-entry-display-text={entry.fields.internalTitle}
+data-csk-variant="asset|entry"
 ```
 
 **Note** It is highly recommended to use `data-csk-entry-display-text` for all entries. If you purely want to visually group items, you can omit the other tags. Otherwise, for best future functionality, it is best to use all the tags.
+
+#### Variant
+
+By default, all `data-csk-variant` values are set to `entry`.
+If you set it to `asset` then editing will open this item in an `/assets` path.
 
 To quickly add these tags to a react app, the LastRev Sidekick Utility is recommended (link TBD once published).
 
