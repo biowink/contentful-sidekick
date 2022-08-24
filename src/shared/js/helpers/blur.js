@@ -10,6 +10,10 @@ export const setBlur = ($target, editUrl) => {
   const ctHeight = $el.outerHeight(true);
   const ctWidth = $el.outerWidth(true);
 
+  if (!$el.offset()) {
+    return;
+  }
+
   const posTop = parseInt($el.offset().top, 10);
   const posBottom = docHeight - (posTop + ctHeight);
   const posLeft = parseInt($el.offset().left - $(document).scrollLeft(), 10);
