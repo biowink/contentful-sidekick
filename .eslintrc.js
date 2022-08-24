@@ -20,7 +20,8 @@ module.exports = {
     'react/jsx-closing-bracket-location': [2, { nonEmpty: 'after-props', selfClosing: false }],
     'semi': ['error', 'always'],
     'jsx-a11y/anchor-is-valid': 0,
-    'react/jsx-props-no-spreading': [1, { html: 'ignore' }] // allows for sidekick
+    'react/jsx-props-no-spreading': [1, { html: 'ignore' }], // allows for sidekick
+    'no-use-before-define': 0
   },
   globals: {
     chrome: true
