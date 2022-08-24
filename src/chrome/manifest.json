@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Contentful Sidekick",
-  "short_name": "Contentful Sidekick",
-  "description": "Chrome Extension that enables inline editing for websites created in Contentful",
-  "version": "0.1.1",
+  "name": "Clue Contentful Sidekick",
+  "short_name": "Clue CS",
+  "description": "Chrome Extension that enables inline editing for websites created in Contentful. Modified by Clue.",
+  "version": "1.0.0",
   "permissions": ["activeTab", "storage", "tabs", "http://*/*", "https://*/*", "*://*/*"],
   "icons": {
     "16": "img/icon16.png",
@@ -15,7 +15,7 @@
   },
   "browser_action": {
     "default_popup": "html/popup.html",
-    "default_title": "Contentful Sidekick"
+    "default_title": "Clue Contentful Sidekick"
   },
   "background": {
     "scripts": ["js/background.js"]

@@ -29,7 +29,7 @@ function Popup() {
   return (
     <>
       <header>
-        <div className="csk-h1">Contentful Sidekick</div>
+        <div className="csk-h1">Clue Contentful Sidekick</div>
         <img className="csk-lr-logo" src="../../../img/lr.png" width="30px" alt="Last Rev" />
       </header>
       <main>
