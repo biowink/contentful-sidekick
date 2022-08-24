@@ -3,7 +3,7 @@ import throttle from 'lodash/throttle';
 import { useContextSelector } from 'use-context-selector';
 import getContentfulItemUrl from '../../helpers/getContentfulItemUrl';
 import { resetBlur, setBlur } from '../../helpers/blur';
-import { CSK_ENTRY_ID_NAME, CSK_ENTRY_SELECTOR, CSK_ENTRY_UUID_NAME } from '../../helpers/constants';
+import { CSK_ENTRY_ID_NAME, CSK_ENTRY_SELECTOR, CSK_ENTRY_UUID_NAME, CSK_VARIANT_NAME } from '../../helpers/constants';
 import { TreeStateContext, useTreeUpdater } from './tree-context';
 
 const ElementHighlighter = () => {
@@ -14,7 +14,8 @@ const ElementHighlighter = () => {
       if (!e.target) return;
       const $ct = $(e.target);
       let id = $ct.data(CSK_ENTRY_ID_NAME);
-      let url = id ? getContentfulItemUrl(id, selectedPath) : null;
+      const variant = $ct.data(CSK_VARIANT_NAME);
+      let url = id ? getContentfulItemUrl(id, selectedPath, variant) : null;
       let uuid = $(e.target).data(CSK_ENTRY_UUID_NAME);
       if (!uuid) {
         // The mouse enter target might not be the element with sidekick props
@@ -22,7 +23,7 @@ const ElementHighlighter = () => {
         const $parentEl = $(e.target).parents(`[data-${CSK_ENTRY_UUID_NAME}]`);
         uuid = $($parentEl[0]).data(CSK_ENTRY_UUID_NAME);
         id = $($parentEl[0]).data(CSK_ENTRY_ID_NAME);
-        url = id ? getContentfulItemUrl(id, selectedPath) : null;
+        url = id ? getContentfulItemUrl(id, selectedPath, variant) : null;
       }
       setBlur($(e.target), url);
       setSelected(uuid);

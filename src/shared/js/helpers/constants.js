@@ -5,3 +5,4 @@ export const CSK_ENTRY_DISPLAY_TEXT_NAME = 'csk-entry-display-text';
 export const CSK_ENTRY_UUID_NAME = 'csk-entry-uuid';
 export const CSK_ENTRY_ERROR = 'csk-error';
 export const CSK_ENTRY_SELECTOR = `[data-${CSK_ENTRY_UUID_NAME}]`;
+export const CSK_VARIANT_NAME = 'csk-variant';

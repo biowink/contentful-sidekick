@@ -59,11 +59,14 @@
 }
 
 .csk-element-sidebar .csk-item-group {
-  display: block;
   color: #111;
   line-height: 2;
   user-select: none;
   transition: 0.3s;
+}
+
+.csk-element-sidebar .csk-item-group.asset {
+  display: flex;
 }
 
 .csk-element-sidebar .csk-item-group.selected,
@@ -74,6 +77,10 @@
 .csk-element-sidebar .csk-item {
   vertical-align: middle;
   cursor: pointer;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .csk-element-sidebar .csk-item:focus,
@@ -118,6 +125,7 @@
   text-transform: uppercase;
   transition: background-color 0.1s linear, color 0.05s linear;
   opacity: 0;
+  text-indent: 0;
 }
 
 .csk-element-sidebar .csk-item-group:hover .edit,

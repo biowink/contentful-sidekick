@@ -7,6 +7,7 @@ import {
   CSK_ENTRY_DISPLAY_TEXT_NAME,
   CSK_ENTRY_UUID_NAME,
   CSK_ENTRY_ERROR,
+  CSK_VARIANT_NAME
 } from './constants';
 
 const parseErrors = ($el) => {
@@ -33,6 +34,7 @@ function traverseDomNode(jqObj, domEl, results) {
       id: $el.data(CSK_ENTRY_ID_NAME),
       field: $el.data(CSK_ENTRY_FIELD_NAME),
       type: $el.data(CSK_ENTRY_TYPE_NAME),
+      variant: $el.data(CSK_VARIANT_NAME),
       displayText: $el.data(CSK_ENTRY_DISPLAY_TEXT_NAME),
       errors: parseErrors($el),
       uuid,
@@ -52,7 +54,7 @@ export default () => {
 
   traverseDomNode(
     $(
-      `[data-${CSK_ENTRY_ID_NAME}],[data-${CSK_ENTRY_TYPE_NAME}],[data-${CSK_ENTRY_FIELD_NAME}],[data-${CSK_ENTRY_DISPLAY_TEXT_NAME}]`
+      `[data-${CSK_ENTRY_ID_NAME}],[data-${CSK_ENTRY_TYPE_NAME}],[data-${CSK_ENTRY_FIELD_NAME}],[data-${CSK_ENTRY_DISPLAY_TEXT_NAME}],[data-${CSK_VARIANT_NAME}]`
     ),
     document.body,
     tree

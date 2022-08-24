@@ -15,7 +15,7 @@ const calcElScrollTop = (el) => {
   }
 };
 
-const TreeNode = ({ id, field, type, displayText, uuid, childNodes, errors }) => {
+const TreeNode = ({ id, field, type, displayText, uuid, childNodes, errors, variant }) => {
   const { isExpanded, isSelected } = useNode(uuid);
   const selectedPath = useContextSelector(TreeStateContext, (context) => context.selectedPath);
   const { setIsExpanded } = useTreeUpdater();
@@ -42,6 +42,7 @@ const TreeNode = ({ id, field, type, displayText, uuid, childNodes, errors }) =>
                 ...(errors && errors[childNode.field] ? { [childNode.field]: errors[childNode.field] } : {}),
                 ...childNode.errors
               }}
+              variant={childNode.variant}
             />
           ))}
         </ul>
@@ -55,8 +56,8 @@ const TreeNode = ({ id, field, type, displayText, uuid, childNodes, errors }) =>
     $('html, body').stop().animate({ scrollTop }, 300);
   }, [el]);
 
-  const url = id ? getContentfulItemUrl(id, selectedPath) : null;
-  const text = `${displayText || field || type || id}`;
+  const url = id ? getContentfulItemUrl(id, selectedPath, variant) : null;
+  const text = `${variant === 'asset' ? '🖼️' : ''} ${displayText || field || type || id}`;
   const handleMouseEnter = () => {
     setBlur(el);
     scrollToElement();
@@ -69,7 +70,7 @@ const TreeNode = ({ id, field, type, displayText, uuid, childNodes, errors }) =>
 
   return (
     <li className={`csk-sidebar-node ${isExpanded ? 'expanded' : 'collapsed'}`} onMouseEnter={handleMouseEnter}>
-      <div className={`csk-item-group ${isSelected ? 'selected' : ''}`}>
+      <div className={`csk-item-group ${isSelected ? 'selected' : ''} ${variant}`}>
         {childNodes && childNodes.length ? (
           <span
             className="csk-icon-expand"
@@ -86,6 +87,7 @@ const TreeNode = ({ id, field, type, displayText, uuid, childNodes, errors }) =>
           onClick={handleExpandCollapseClick}
           onKeyDown={handleExpandCollapseClick}
           role="menuitem"
+          title={text}
           tabIndex={0}>
           {text}
         </span>

@@ -16,6 +16,7 @@ const Sidebar = ({ tree, show }) => {
             uuid={node.uuid}
             childNodes={node.children}
             errors={node.errors}
+            variant={node.variant}
           />
         );
       }),
